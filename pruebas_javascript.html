@@ -24,12 +24,13 @@
     <br>
     <input type="text" name="nombre" id="campoTexto">
     <hr>
-
+    
+    <!-- Con el atributo "required" evitas que el formulario se pueda enviar si esta el campo vacio -->
     <form action="GET" name="datosForm">
         <div>Nombre</div>
-        <input type="text" name="name" id="nombreForm">
+        <input type="text" name="name" id="nombreForm" required>
         <div>Apellidos</div>
-        <input type="text" name="apellidos" id="apellidosForm">
+        <input type="text" name="apellidos" id="apellidosForm" required>
         <br>
         <br>
         <input type="submit" value="Enviar Formulario">
