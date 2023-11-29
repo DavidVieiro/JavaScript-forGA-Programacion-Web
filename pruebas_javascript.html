@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas JavaScript</title>
+    <script src="pruebas_javascript.js"></script>
+    <link rel="stylesheet" href="estilo_1.css">
+    <link rel="stylesheet" href="estilo_2.css">
+</head>
+<body>
+    <h1 id="cabecera_uno">Texto de la cabecera</h1>
+    <p id="parrafo_uno">Texto del parrafo</p>
+    <p>Cambiamos parrafo <span id="parrafo_dos">0</span> veces</p>
+    <p>Número máximo soportado por JS: <span id="numero_max"></span></p>
+    <p>Número PI: <span id="numero_pi"></span></p>
+    <p id="lasFrutas"></p>
+    <div id="lasOtrasFrutas"></div>
+    <p id="persona"></p>
+    <input type="button" value="Cambiar parrafo" onclick="parrafoUno()">
+    <input type="button" value="Cambiar cabecera" onclick="cabeceraUno()">
+    <input type="button" value="Incrementar parrafo 2" onclick="parrafoDos()">
+    <br>
+    <br>
+    <input type="text" name="nombre" id="campoTexto">
+    <hr>
+
+    <form action="GET" name="datosForm">
+        <div>Nombre</div>
+        <input type="text" name="name" id="nombreForm">
+        <div>Apellidos</div>
+        <input type="text" name="apellidos" id="apellidosForm">
+        <br>
+        <br>
+        <input type="submit" value="Enviar Formulario">
+        <input type="button" value="Limpiar Formulario" onclick="limpiarForm()">
+    </form>
+    <hr>
+    <br>
+    <!-- Cremos una lista de elementos en las que podemos hacer click y cambiar el estilo -->
+    <ol>
+        <li class="menuitem" onclick="habStyle(0)">Estilo fondo negro</li>
+        <li class="menuitem" onclick="habStyle(1)">Estilo fondo blanco</li>
+    </ol>
+
+    
+    <script>
+        let x = Number.MAX_VALUE; // El valor maximo soportado por JS
+        let y = Math.PI; // valor de PI
+
+        // definimos un array
+        const frutas = ["Platano", "Manzana", "Pera", "Fresa"];
+        // definimos un objeto
+        const persona = {nombre:"Manuel", apellido1:"Mendez", apellido2:"Cortés", edad:30 };
+        // definimos las dos variables para luego mostrar las frutas
+        let textoFrutas = "";
+        let textoMasFrutas = "";
+        
+        // mostramos los elementos dentro de las etiquetas de HTML (contenido)
+        document.getElementById("numero_max").innerHTML = x;
+        document.getElementById("numero_pi").innerHTML = y;
+        document.getElementById("persona").innerHTML = persona.nombre;
+        document.getElementById("persona").innerHTML += " " + persona.edad + " años";
+
+        // mostramos el array de frutas separados por espacios.
+        frutas.forEach(funcFrutas);
+        document.getElementById("lasFrutas").innerHTML = textoFrutas;
+
+        // mostramos el array de frutas en una lista no ordenada.
+        textoMasFrutas += "<ul>";
+        frutas.forEach(funcMasFrutas);
+        textoMasFrutas += "</ul>";
+        document.getElementById("lasOtrasFrutas").innerHTML = textoMasFrutas;
+        
+        // preparamos el array para mostrarlo separado por espacios
+        function funcFrutas(valor) {
+            textoFrutas += valor + " ";
+        }
+        // preparamos el array para mostrarlo en una lista
+        function funcMasFrutas(valor) {
+            textoMasFrutas += "<li>" + valor + "</li>";
+        }
+
+        // deshabilitar el campo de texto 
+        document.getElementById("campoTexto").toggleAttribute("disabled");
+        // añadimos un atributo placeholder al campo de texto
+        document.getElementById("campoTexto").setAttribute("placeholder", "Deshabilitado por JS");
+        
+        // forzamos que se habilite el primer estilo para deshabilitar los otros
+        habStyle(0);
+    </script>
+</body>
+</html>

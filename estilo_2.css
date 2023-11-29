@@ -1,0 +1,25 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 29 nov 2023, 10:59:20
+    Author     : David
+*/
+
+body {
+    background-color: white;
+    color: black;
+}
+.menuitem {
+    background-color: #f1f1f1;
+    border: 1px solid #d4d4d4;
+    list-style-type: none;
+    padding: 2px;
+    cursor: pointer;
+    width: 200px;
+}
+
+.menuitem:hover {
+    background-color: #ffffff;
+}
