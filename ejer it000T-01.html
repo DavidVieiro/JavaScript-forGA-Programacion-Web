@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Ejercicio it000T-01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="pruebas_javascript.js"></script>
+        <style>
+            ol li::marker {
+                font-weight: bold;
+            }
+            p {
+                font-family: "Lucida Console", Monaco, monospace;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <h1>Sistemas de Representación Numérica: Base 64</h1>
+        <hr>
+        
+        <h2>Base 64 entendido como sistema de representación numérica</h2>
+        <hr>
+        
+        <p>De igual forma que manejamos otros sistemas numéricos de la familia Base X, como Base 2 (aquél en el que existen 2 guarismos o caracteres numéricos) y Base 10 (aquél en el que existen 10 guarismos), podemos utilizar el sistema en Base 64 (aquél en el que existen 64 guarismos o caracteres numéricos).</p>
+        <p>Referencia: <a href="https://docs.google.com/document/d/18T0pgpEncQ4zdraj8yQqZHSojzOuTJRGxyh10k5w9nI/edit#heading=h.9801sruyzo00" target="_blank">Apartado "Bases numéricas"</a> del documento "Representación Numérica: Parte 0".</p>
+        
+        <h3>¿Por qué?: ¿Cuáles son sus ventajas?</h3> 
+        <p>Y su conveniencia en informática radica en que es el sistema de representación numérica de base X con X mayor que cumple las dos condiciones siguientes:</p>
+        
+        <ol type="A">
+            <li>
+                <p>Que X es una potencia de 2.</p>
+            </li>
+            <li>
+                <p>Y que X es menor que 95 (= 128-33), que es el número de caracteres ANSI de 7 bits (o sea, el primer alfabeto informático universal que se creó y se convirtió en estándar allá por 1963).</p>
+            </li>
+        </ol>
+        <!--<img src="img/tabla_codificacion.PNG" alt="Tabla de codificacion" title="Tabla de codificacion" height="450" style="float: right; margin-left: 10px;">-->
+        <p>Y estas dos condiciones son importantes porque implican que éste es el sistema numérico que permite representar números de la forma más breve que además satisface las dos condiciones siguientes (derivadas respectivamente de las dos propiedades anteriores):</p>
+        
+        <ol type="A">
+            <li>
+                <p>Que cada guarismo de dicho sistema numérico se corresponde con un número de bits fijo.</p>
+                <p>En concreto, si X = 2n, cada guarismo en Base X se corresponde con n guarismos en Base 2 (o sea, n bits).</p>
+            </li>
+            <li>
+                <p>Que sus guarismos puede ser representados con los caracteres del alfabeto universal informático más antiguo y que todos los ordenadores entienden, hasta los más antiguos, y que todos los protocolos de comunicación permiten transmitir, incluso el más antiguo, el mail (1971).</p>
+                <p>Nota: Como sabemos, hasta los sistemas informáticos de la civilización alienígena tecnológicamente hiperavanzada que invadió la Tierra entienden esta codificación (bibliografía: “Independence Day”, 1996).</p>
+            </li>
+        </ol>
+        <br>
+        <input type="button" value="Todos Elementos P" onclick="todasEtiP()">
+        <input type="button" value="Elementos P Pares" onclick="paresEtiP()">
+        <input type="button" value="Limpiar Elementos P" onclick="clearP()">
+    </body>
+</html>
