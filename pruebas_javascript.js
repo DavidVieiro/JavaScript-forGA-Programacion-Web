@@ -13,7 +13,7 @@ function parrafoDos() {
     //    numParrafoDos = document.getElementById("parrafo_dos").innerHTML;
     //    numParrafoDos++;
     //    document.getElementById("parrafo_dos").innerHTML = numParrafoDos;
-
+    // lo mismo que lo cocmentado pero en una sola linea
     document.getElementById("parrafo_dos").innerHTML = Number(document.getElementById("parrafo_dos").innerHTML) + 1;
 }
 // creamos una funcion para borrar los campos del formulario
@@ -49,7 +49,7 @@ function clearAll2() {
         losOL[i].style.backgroundColor = "transparent";
     }
 }
-// eliminar el atributo STYLE de los elementos HTML
+// TODO eliminar el atributo STYLE de los elementos HTML
 function clearAll() {
     let cuerpo = document.body;
     // recorremos los hijos de BODY y eliminamos el atributo STYLE
@@ -57,7 +57,11 @@ function clearAll() {
         cuerpo.querySelectorAll(cuerpo.children[i].nodeName).forEach(x => {
             x.removeAttribute("style");
         });
+        console.log(cuerpo.children[i].nodeName);
     }
+    //console.log(cuerpo.querySelectorAll("p"));
+    // ! falta recorrer los hijos de los hijos de body
+
 }
 // cambiamos el color de fondo de todos los P que hay en el documento HTML
 function todasEtiP() {
