@@ -49,19 +49,12 @@ function clearAll2() {
         losOL[i].style.backgroundColor = "transparent";
     }
 }
-// TODO eliminar el atributo STYLE de los elementos HTML
+// eliminar el atributo STYLE de los elementos HTML
 function clearAll() {
-    let cuerpo = document.body;
     // recorremos los hijos de BODY y eliminamos el atributo STYLE
-    for (let i = 0; i < cuerpo.children.length; i++) {
-        cuerpo.querySelectorAll(cuerpo.children[i].nodeName).forEach(x => {
-            x.removeAttribute("style");
-        });
-        console.log(cuerpo.children[i].nodeName);
-    }
-    //console.log(cuerpo.querySelectorAll("p"));
-    // ! falta recorrer los hijos de los hijos de body
-
+    document.body.querySelectorAll("*").forEach(x => {
+        x.removeAttribute("style");
+    });
 }
 // cambiamos el color de fondo de todos los P que hay en el documento HTML
 function todasEtiP() {
