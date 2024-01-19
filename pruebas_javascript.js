@@ -91,6 +91,5 @@ function limitRandomIntInterval(limit, min, max) {
         document.getElementById("numGenerados").innerHTML = numGenerados.toString();
     } else {
         document.getElementById("numGenerados").innerHTML = "El valor del numero maximo no puede ser inferior al valor del numero minimo.";
-        console.log(limit + " " + min + " " + max);
     }
 }
