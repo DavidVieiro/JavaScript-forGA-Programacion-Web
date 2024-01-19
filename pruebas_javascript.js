@@ -1,4 +1,3 @@
-
 // cambiamos el texto dentro del elemento P con el ID parrafo_uno
 function parrafoUno() {
     document.getElementById("parrafo_uno").innerHTML = "Hemos cambiado el parrafo uno!";
@@ -8,12 +7,12 @@ function cabeceraUno() {
     document.getElementById("cabecera_uno").innerHTML = "Cambiamos la cabecera uno";
 }
 // definimos un numero y en la funcion recogemos el valor entra las etiquetas SPAN y le sumamos 1
-let numParrafoDos = 0;
+// let numParrafoDos = 0;
 function parrafoDos() {
     //    numParrafoDos = document.getElementById("parrafo_dos").innerHTML;
     //    numParrafoDos++;
     //    document.getElementById("parrafo_dos").innerHTML = numParrafoDos;
-    // lo mismo que lo cocmentado pero en una sola linea
+    // lo mismo que lo comentado pero en una sola linea
     document.getElementById("parrafo_dos").innerHTML = Number(document.getElementById("parrafo_dos").innerHTML) + 1;
 }
 // creamos una funcion para borrar los campos del formulario
@@ -30,24 +29,6 @@ function desStyle() {
 function habStyle(n) {
     desStyle();
     document.styleSheets[n].disabled = false;
-}
-// poner fondo en transparente para limpiar el fondo de los elementos HTML
-function clearAll2() {
-    let lasP = document.getElementsByTagName("p");
-    let losLI = document.getElementsByTagName("li");
-    let losOL = document.getElementsByTagName("ol");
-    // elementos P
-    for (let i = 0; i < lasP.length; i++) {
-        lasP[i].style.backgroundColor = "transparent";
-    }
-    // elementos LI
-    for (let i = 0; i < losLI.length; i++) {
-        losLI[i].style.backgroundColor = "transparent";
-    }
-    // elementos OL
-    for (let i = 0; i < losOL.length; i++) {
-        losOL[i].style.backgroundColor = "transparent";
-    }
 }
 // eliminar el atributo STYLE de los elementos HTML
 function clearAll() {
@@ -90,5 +71,26 @@ function primOLsegHijo() {
     });
     // nos centramos solo en el segundo LI dentro del primer OL
     losOL[0].getElementsByTagName("li")[1].style.backgroundColor = "aquamarine";
-
+}
+// creamos una funcion para generar un numero entero aleatorio dando un valor minimo y otro maximo
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+// creamos otra funcion para estrablecer un limite de numeros aleatorios generados
+function limitRandomIntInterval(limit, min, max) {
+    // definimos la variable como array vacio
+    let numGenerados = [];
+    if (max > min) {
+        // creamos un bucle para generar una cantidad de numeros aleatorios hasta llegar al limite establecido
+        for (let i = 0; i < limit; i++) {
+            // cada numero que geramos lo insertamos al final del array
+            // obligamos a que "min" y "max" sean numeros para evitar errores
+            numGenerados.push(randomIntFromInterval(Number(min), Number(max)));
+        }
+        // mostramos el array en el parrafo con id "numGenerados" convertido a String
+        document.getElementById("numGenerados").innerHTML = numGenerados.toString();
+    } else {
+        document.getElementById("numGenerados").innerHTML = "El valor del numero maximo no puede ser inferior al valor del numero minimo.";
+        console.log(limit + " " + min + " " + max);
+    }
 }
