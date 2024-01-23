@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejercicio Encerado 001</title>
+    </head>
+
+    <body>
+        <h1>Ejercicio Encerado 001</h1>
+        <p>Introduce un numero:</p>
+        <input type="number" name="number" id="numero" min="2" max="30">
+        <input type="button" value="Enviar" onclick="main()">
+        <br>
+        <br>
+        <div id="resultado"></div>
+        <script>
+            function AdQueHago(r, x) {
+                // (x <= 1) cambiando solo un caracter permite numeros menores que 1
+                if (x <= 1) {
+                    return r;
+                }
+                r = r * x;
+                // mostramos el resultado intermedio de R y X
+                // hacemos append dentro del elemento DIV con id "resultado"
+                // append del resultado R y X con BR en medio para saltos de linea
+                document.getElementById("resultado").append("R vale: " + r);
+                document.getElementById("resultado").append(document.createElement("br"));
+                document.getElementById("resultado").append("X vale: " + x);
+                document.getElementById("resultado").append(document.createElement("br"));
+                // ponemos un return para poder enviar un resultado a niveles superiores en la recursividad de la funcion
+                return AdQueHago(r, x - 1);
+            }
+            function main() {
+                // input x;
+                let x = Number(document.getElementById("numero").value);
+                // print AdQueHago(1, x);
+                // mostramos el resultado final en el P con id "resultado"
+                document.getElementById("resultado").append("Resultado final: " + AdQueHago(1, x));
+                // ponemos un HR al final de todo para separar con el resto de resultados si volvemos a pulsar el boton
+                document.getElementById("resultado").append(document.createElement("hr"));
+            }
+        </script>
+    </body>
+
+</html>
