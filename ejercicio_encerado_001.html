@@ -12,6 +12,7 @@
         <p>Introduce un numero:</p>
         <input type="number" name="number" id="numero" min="2" max="30">
         <input type="button" value="Enviar" onclick="main()">
+        <input type="button" value="Limpiar" onclick="limpiar()">
         <br>
         <br>
         <div id="resultado"></div>
@@ -40,6 +41,9 @@
                 document.getElementById("resultado").append("Resultado final: " + AdQueHago(1, x));
                 // ponemos un HR al final de todo para separar con el resto de resultados si volvemos a pulsar el boton
                 document.getElementById("resultado").append(document.createElement("hr"));
+            }
+            function limpiar() {
+                document.getElementById("resultado").innerHTML = "";
             }
         </script>
     </body>
