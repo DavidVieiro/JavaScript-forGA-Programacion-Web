@@ -5,11 +5,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Ejercicio Encerado 001</title>
+        <style>
+            p {
+                font-weight: bold;
+            }
+
+            body {
+                text-align: center;
+            }
+        </style>
     </head>
 
     <body>
         <h1>Ejercicio Encerado 001</h1>
-        <p>Introduce un numero:</p>
+        <p>Introduce un numero de 2 a 30:</p>
         <input type="number" name="number" id="numero" min="2" max="30">
         <input type="button" value="Enviar" onclick="main()">
         <input type="button" value="Limpiar" onclick="limpiar()">
@@ -43,6 +52,7 @@
                 document.getElementById("resultado").append(document.createElement("hr"));
             }
             function limpiar() {
+                // para limpiar el texto del output hacemos que el DIV con id "resultado" no tenga ningun texto dentro
                 document.getElementById("resultado").innerHTML = "";
             }
         </script>
