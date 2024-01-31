@@ -84,6 +84,8 @@ function limitRandomIntInterval(limit, min, max) {
     elementoNumGenerados = document.getElementById("numGenerados");
     // limpiamos el contenido del elemento HTML con id numGenerados por si se vuelve a ejecutar la funcion
     elementoNumGenerados.innerHTML = "";
+    // establecemos el color del texto en rojo por si saltan errores
+    elementoNumGenerados.style.color = "red";
 
     // comprobamos que el valor del numero limite sea cero o inferior y devolvemos un error si ese es el caso
     if (limit <= 0) {
@@ -129,6 +131,8 @@ function limitRandomIntInterval(limit, min, max) {
     }
     // si no hay errores ejecutamos el numero aleatorio
     if (errores == 0) {
+        // sabemos que no hay errores asi que ponemos el color del texto por defecto
+        elementoNumGenerados.style.color = "";
         // creamos un bucle para generar una cantidad de numeros aleatorios hasta llegar al limite establecido
         for (let i = 0; i < limit; i++) {
             // cada numero que generamos lo insertamos al final del array
