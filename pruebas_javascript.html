@@ -44,11 +44,13 @@
         </p>
         <input type="number" name="limitRandomInt" id="limitRandomInt" placeholder="Limite Numeros" min="1" max="10000"
             style="width: 140px;">
-        <input type="number" name="minRandomInt" id="minRandomInt" placeholder="Numero Minimo" max="10000">
-        <input type="number" name="maxRandomInt" id="maxRandomInt" placeholder="Numero Maximo" max="10000">
+        <input type="number" name="minRandomInt" id="minRandomInt" placeholder="Numero Minimo" min="0" max="10000">
+        <input type="number" name="maxRandomInt" id="maxRandomInt" placeholder="Numero Maximo" min="0" max="10000">
         <input type="button" value="Generar enteros aleatorios"
             onclick="limitRandomIntInterval(document.getElementById('limitRandomInt').value, document.getElementById('minRandomInt').value, document.getElementById('maxRandomInt').value)">
-        <p id="numGenerados">&nbsp;</p>
+        <input type="button" value="Limpiar Output" onclick="limpiarOutputNumAleatorios()">
+        <p id="numGenerados"></p>
+        <hr>
         <!-- Cremos una lista de elementos en las que podemos hacer click y cambiar el estilo -->
         <p>Haz clic en el menu para cambiar el estilo</p>
         <ol>
