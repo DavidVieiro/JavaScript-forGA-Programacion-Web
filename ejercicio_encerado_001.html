@@ -26,7 +26,7 @@
         <br>
         <div id="resultado"></div>
         <script>
-            function AdQueHago(r, x) {
+            function adQueHago(r, x) {
                 // (x <= 1) cambiando solo un caracter permite numeros menores que 1
                 if (x <= 1) {
                     return r;
@@ -40,14 +40,14 @@
                 document.getElementById("resultado").append("X vale: " + x);
                 document.getElementById("resultado").append(document.createElement("br"));
                 // ponemos un return para poder enviar un resultado a niveles superiores en la recursividad de la funcion
-                return AdQueHago(r, x - 1);
+                return adQueHago(r, x - 1);
             }
             function main() {
                 // input x;
                 let x = Number(document.getElementById("numero").value);
-                // print AdQueHago(1, x);
+                // print adQueHago(1, x);
                 // mostramos el resultado final en el elemento DIV con id "resultado"
-                document.getElementById("resultado").append("Resultado final: " + AdQueHago(1, x));
+                document.getElementById("resultado").append("Resultado final: " + adQueHago(1, x));
                 // ponemos un HR al final de todo para separar con el resto de resultados si volvemos a pulsar el boton
                 document.getElementById("resultado").append(document.createElement("hr"));
             }
