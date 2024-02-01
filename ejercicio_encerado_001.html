@@ -46,13 +46,13 @@
                 // input x;
                 let x = Number(document.getElementById("numero").value);
                 // print AdQueHago(1, x);
-                // mostramos el resultado final en el P con id "resultado"
+                // mostramos el resultado final en el elemento DIV con id "resultado"
                 document.getElementById("resultado").append("Resultado final: " + AdQueHago(1, x));
                 // ponemos un HR al final de todo para separar con el resto de resultados si volvemos a pulsar el boton
                 document.getElementById("resultado").append(document.createElement("hr"));
             }
             function limpiar() {
-                // para limpiar el texto del output hacemos que el DIV con id "resultado" no tenga ningun texto dentro
+                // para limpiar el texto del output hacemos que el elemento DIV con id "resultado" no tenga ningun texto dentro
                 document.getElementById("resultado").innerHTML = "";
             }
         </script>
