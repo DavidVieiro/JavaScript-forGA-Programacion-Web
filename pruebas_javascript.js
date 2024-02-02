@@ -79,7 +79,7 @@ function randomIntFromInterval(min, max) { // min and max included
 // creamos otra funcion para estrablecer un limite de numeros aleatorios generados y comprobacion de errores
 function limitRandomIntInterval(limit, min, max) {
     let numGenerados = []; // definimos la variable como array vacio
-    let errores = 0; // comprobamos si hay errores en los campos de texto
+    let errores = 0; // definimos la variable con la que comprobamos si hay errores en los campos de texto
     // definimos la variable con el elemento HTML ya que lo vamos a usar muchas veces
     const ELEMENTO_NUM_GENERADOS = document.getElementById("numGenerados");
     // limpiamos el contenido del elemento HTML con id numGenerados por si se vuelve a ejecutar la funcion
