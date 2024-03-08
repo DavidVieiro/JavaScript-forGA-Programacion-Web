@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Suma de primos</title>
+    </head>
+
+    <body>
+        <p>Escribe un numero entero y te devuelvo la suma de los numeros primos menores a ese numero:</p>
+        <input type="number" name="numero" id="numEntero" min="1" max="100000" value="1">
+        <input type="button" value="Calcular" onclick="sumaPrimos(Number(document.getElementById('numEntero').value))">
+        <input type="button" value="Limpiar" onclick="limpiar()">
+        <p id="resultado"></p>
+    </body>
+
+    <script>
+        function sumaPrimos(entero) {
+            let total = 0;
+
+            //Recorremos todos los numeros desde el 2 hasta el numero introducido
+            for (let i = 2; i <= entero; i++) {
+                //Sumamos solo los numeros primos, nos saltamos el resto
+                if (esPrimo(i)) {
+                    total += i;
+                }
+            }
+            // mostramos un mensaje de la suma total de primos en el P con el id "resultado"
+            document.getElementById("resultado").innerHTML = `La suma de los primos enteros anteriores al numero introducido es: ${total}`;
+        }
+        function esPrimo(valor) {
+            //Comprobamos si el numero introducido es primo
+            for (var i = 2; i < valor; i++) {
+                if (valor % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function limpiar() {
+            document.getElementById("numEntero").value = 1;
+            document.getElementById("resultado").innerHTML = "";
+        }
+    </script>
+
+</html>
